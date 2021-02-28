@@ -37,6 +37,9 @@ require([
   "codemirror/mode/htmlmixed/htmlmixed", // for embedded HTML
   "codemirror/mode/stex/stex", // for Math TeX Formular
   "codemirror/mode/yaml/yaml", // for Front Matters
+  "codemirror/keymap/vim", // for Front Matters
+  "codemirror/addon/dialog/dialog",
+  "codemirror/addon/search/searchcursor",
 
   // NOTE: For code blocks,
   //       addon "mode-loader" can load modes automatically if configured properly
@@ -89,6 +92,9 @@ require([
 
   // HyperMD magic. See https://laobubu.net/HyperMD/docs/
   var editor = HyperMD.fromTextArea(myTextarea, {
+    keyMap: "vim",
+    extraKeys: "hypermd",
+    viewportMargin: Infinity,
     mode: {
       name: "hypermd",
       hashtag: true,  // this syntax is not actived by default
