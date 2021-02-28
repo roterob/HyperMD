@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <link rel="stylesheet" href="./demo/theme.css">
     <link rel="stylesheet" href="./demo/style.css">
 
 <div id="loadSplash">
@@ -172,41 +173,11 @@
 <script src="./demo/lab.js"></script>
 
 <!-- some useless test stuff -->
-<div id="test-box">
-    <div class="test-item">
-        <button onclick="HyperMD.switchToNormal(editor)">
-            <svg class="icon icon-code"><use xlink:href="./demo/svgicon/symbol-defs.svg#icon-code"></use></svg> Normal
-        </button>
-        <div class="test-tooltip">Use default theme provided by CodeMirror, disable HyperMD's visual tricks.</div>
-    </div>
-
-    <div class="test-item">
-        <button onclick="HyperMD.switchToHyperMD(editor)">
-            <svg class="icon icon-magic"><use xlink:href="./demo/svgicon/symbol-defs.svg#icon-magic"></use></svg> HyperMD Mode
-        </button>
-        <div class="test-tooltip">Revert previous button's change.</div>
-    </div>
-
-    <div class="right test-item">
-        <button onclick="window.open('https://github.com/laobubu/hypermd/')">
-            <svg class="icon icon-github"><use xlink:href="./demo/svgicon/symbol-defs.svg#icon-github"></use></svg> <span class="phone-hidden">GitHub</span>
-        </button>
-        <div class="test-tooltip">View HyperMD on GitHub</div>
-    </div>
-
-    <div class="right test-item">
-        <button onclick="window.open(demo_page_baseurl + 'docs')">
-            <svg class="icon icon-book"><use xlink:href="./demo/svgicon/symbol-defs.svg#icon-book"></use></svg> <span class="phone-hidden">Documentation</span>
-        </button>
-        <div class="test-tooltip">Documentation</div>
-    </div>
-
-    <div class="test-item">
-        <button onclick="winLab.show(true)">
-            <svg class="icon icon-lab"><use xlink:href="./demo/svgicon/symbol-defs.svg#icon-lab"></use></svg> <span class="phone-hidden">Lab</span>
-        </button>
-        <div class="test-tooltip">Inspect editor (and demo page) options</div>
-    </div>
+<div id="tag-box">
+  <div class="tag">daily</div>
+  <div class="tag">retrospective</div>
+  <div class="tag">howto</div>
+  <div class="tag">info</div>
 </div>
 <script src="./demo/index2.js"></script>
 

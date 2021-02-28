@@ -12,14 +12,17 @@
     border: 1px solid #900;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, 'Hiragino Sans GB', 'WenQuanYi Micro Hei', STHeiti, 'Microsoft Jhenghei', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+        "Hiragino Sans GB", "WenQuanYi Micro Hei", STHeiti, "Microsoft Jhenghei",
+        sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     -webkit-font-smoothing: antialiased;
-    transition: .4s ease;
+    transition: 0.4s ease;
 }
 
 a {
@@ -28,11 +31,14 @@ a {
 }
 
 a:hover {
-    text-decoration: underline
+    text-decoration: underline;
 }
 
-h1, h2, h3, b {
-    font-weight: 600
+h1,
+h2,
+h3,
+b {
+    font-weight: 600;
 }
 
 h2 {
@@ -43,11 +49,11 @@ h2 {
     position: absolute;
     position: fixed;
     z-index: 100;
-    background: #EEE;
-    background-image: linear-gradient(to bottom, #FFF, #EEE);
+    background: #eee;
+    background-image: linear-gradient(to bottom, #fff, #eee);
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
     max-width: 70%;
 }
 
@@ -60,11 +66,11 @@ h2 {
     right: 0;
     height: 100%;
     top: 0;
-    color: #FFF;
+    color: #fff;
     border: 0;
-    background-color: #C43;
-    background-image: linear-gradient(to bottom, #C43, #A32);
-    border-left: 1px solid #CCC;
+    background-color: #c43;
+    background-image: linear-gradient(to bottom, #c43, #a32);
+    border-left: 1px solid #ccc;
     cursor: pointer;
     font-size: 80%;
     width: 30px;
@@ -73,9 +79,9 @@ h2 {
 .float-win-title {
     position: relative;
     background: #579;
-    font-size: .87em;
-    background-image: linear-gradient(to bottom, #68A, #579);
-    color: #EEE;
+    font-size: 0.87em;
+    background-image: linear-gradient(to bottom, #68a, #579);
+    color: #eee;
     padding: 5px 15px;
     padding-right: 50px;
     -webkit-touch-callout: none;
@@ -97,15 +103,15 @@ h2 {
     height: 100%;
     position: relative;
     box-sizing: border-box;
-    transition: opacity .4s;
+    transition: opacity 0.4s;
     padding: 10px;
-    padding-top: 70px;
+    padding-top: 50px;
 }
 
 #editor_area.loading_file {
     cursor: wait;
     pointer-events: none;
-    opacity: .5;
+    opacity: 0.5;
 }
 
 #toc {
@@ -120,13 +126,12 @@ h2 {
 #toc .toc-item {
     cursor: pointer;
     border-bottom: 1px solid #ccc;
-    color: #666;
-    padding: .5em;
+    color: var(--sideBarColor);
+    padding: 0.5em;
 }
 
 #toc .toc-item:hover {
-    color: #333;
-    background: #FAFAFA;
+    background: var(--itemBgColor);
 }
 
 @media (max-width: 800px) {
@@ -142,7 +147,7 @@ h2 {
 body.loaded {
     max-width: 1800px;
     margin: 0 auto;
-    background: #EEE;
+    background: var(--sideBarBgColor);
 }
 
 body.loaded #editor_area {
@@ -150,35 +155,39 @@ body.loaded #editor_area {
     z-index: 0;
 }
 
-body.loaded #test-box {
+body.loaded #tag-box {
     position: absolute;
     position: fixed;
-    left: 10px;
-    top: 10px;
-    height: 50px;
-    transition: .1s ease;
+    left: 5px;
+    top: 5px;
+    right: 5px;
+    transition: 0.1s ease;
     overflow: hidden;
     box-sizing: border-box;
     color: #333;
-    background: #f7f7f7;
-    right: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
-body.loaded #test-box:after {
-    content: ' ';
-    display: block;
-    clear: both;
+body.loaded #tag-box .tag {
+    padding: 6px 16px;
+    margin: 5px;
+    line-height: 16px;
+    font-size: 14px;
+    border-radius: 16px;
+    display: inline-block;
+    border: 1px solid var(--themeColor);
+    background-color: var(--itemBgColor);
+    cursor: pointer;
 }
 
-body.loaded #test-box:hover {
-    height: auto;
-    max-height: 100px;
-    overflow: visible;
+body.loaded #tag-box .tag:hover {
+    color: #fff;
+    background: var(--focusColor);
 }
 
-body.loaded #test-box,
 body.loaded .CodeMirror {
-    box-shadow: 0 2px 8px #CCC;
+    box-shadow: 0 2px 8px #ccc;
 }
 
 body.loaded #test-box .test-item {
@@ -186,7 +195,7 @@ body.loaded #test-box .test-item {
     vertical-align: middle;
     float: left;
     font-size: 15px;
-    border-right: 1px solid #CCC;
+    border-right: 1px solid #ccc;
 }
 
 body.loaded #test-box .test-sep,
@@ -196,21 +205,21 @@ body.loaded #test-box .test-item button {
     border: 0;
     cursor: pointer;
     padding: 0 20px;
-    background: #FAFAFA;
+    background: #fafafa;
     font-size: inherit;
     color: #333;
 }
 
 body.loaded #test-box .test-item button:hover {
-    background: #FFF;
+    background: #fff;
     color: #000;
-    border-bottom: 3px solid  #4078c0;
+    border-bottom: 3px solid #4078c0;
 }
 
 body.loaded #test-box .test-sep {
     float: left;
     width: 1em;
-    border-right: 1px solid #CCC;
+    border-right: 1px solid #ccc;
     cursor: default;
 }
 
@@ -220,8 +229,8 @@ body.loaded #test-box .test-item .test-tooltip {
     left: 0;
     top: 110%;
     background: #000;
-    background: rgba(0,0,0,0.7);
-    color: #FFF;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
     padding: 5px 10px;
     font-size: 13px;
     white-space: nowrap;
@@ -234,7 +243,7 @@ body.loaded #test-box .test-item:hover .test-tooltip {
 body.loaded #test-box .test-item.right {
     float: right;
     border-right: 0;
-    border-left: 1px solid #CCC;
+    border-left: 1px solid #ccc;
 }
 
 body.loaded #test-box .test-item.right .test-tooltip {
@@ -257,7 +266,7 @@ body.loaded #test-box .test-item.right .test-tooltip {
     bottom: 100%;
     font-size: 90%;
     white-space: nowrap;
-    background: #FFC;
+    background: #ffc;
     position: absolute;
     display: inline-block;
     border: 1px solid;
@@ -277,7 +286,7 @@ body.loaded #test-box .test-item.right .test-tooltip {
 }
 
 #winLab em {
-    text-shadow: 0 0 3px #FF9;
+    text-shadow: 0 0 3px #ff9;
 }
 
 /* SM.MS Image Hosting! */
@@ -288,7 +297,7 @@ body.loaded #test-box .test-item.right .test-tooltip {
     font-weight: bold;
     z-index: 100;
     position: absolute;
-    background: #FFF;
+    background: #fff;
     padding: 4px 8px;
     border: 8px solid #900;
     pointer-events: none;
@@ -296,7 +305,7 @@ body.loaded #test-box .test-item.right .test-tooltip {
 
 /* sponsors */
 
-.sponsors > span{
+.sponsors > span {
     display: inline-block;
     border: 1px solid #999;
     padding: 3px 6px;
