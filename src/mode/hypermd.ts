@@ -231,7 +231,7 @@ CodeMirror.defineMode("hypermd", function (cmCfg, modeCfgUser) {
       "hmdNextPos", "hmdNextState", "hmdNextStyle",
       "hmdHashtag",
     ]
-    for (const key of keys) ans[key] = s[key]
+    for (const key of keys) { ans[key] = s[key] as never }
 
     ans.hmdTableColumns = s.hmdTableColumns.slice(0)
 
