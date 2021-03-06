@@ -42,7 +42,6 @@ require([
   "codemirror/mode/htmlmixed/htmlmixed", // for embedded HTML
   "codemirror/mode/stex/stex", // for Math TeX Formular
   "codemirror/mode/yaml/yaml", // for Front Matters
-  "codemirror/keymap/vim", // for Front Matters
   "codemirror/addon/dialog/dialog",
   "codemirror/addon/search/searchcursor",
 
@@ -73,6 +72,7 @@ require([
   "hypermd/addon/table-align",
 
   "hypermd/keymap/hypermd",
+  "hypermd/keymap/vim",
 
   /////////////////////////////////////////////
   /// PowerPack with third-party libraries  ///
