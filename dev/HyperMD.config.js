@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require("path");
 
 /**
  * Components that will be bundled into ai1.js (all in one bundle)
@@ -24,6 +24,7 @@ exports.components = {
   "addon/hide-token": "HideToken",
   "addon/cursor-debounce": "CursorDebounce",
   "keymap/hypermd": "KeyMap",
+  "keymap/vim": "KeyMapVim",
 };
 
 /**
@@ -31,10 +32,7 @@ exports.components = {
  *
  * Support minimatch pattern syntax
  */
-exports.dummyComponents = [
-  "addon/skeleton",
-  "powerpack/*",
-];
+exports.dummyComponents = ["addon/skeleton", "powerpack/*"];
 
 /**
  * If not using mode loader, try to get 3rd party libraries via these global names
@@ -49,9 +47,9 @@ exports.globalNames = {
   twemoji: "twemoji",
   "flowchart.js": "flowchart",
   mermaid: "mermaid",
-}
+};
 
-exports.externalNames = Object.keys(exports.globalNames)
+exports.externalNames = Object.keys(exports.globalNames);
 
 /**
  * Use RollUp Bundler to make these file(s)
@@ -75,7 +73,7 @@ exports.bundleFiles = [
     output: "core.js",
     name: "HyperMD",
   },
-]
+];
 
 exports.banner = `
 /*!
@@ -89,7 +87,7 @@ exports.banner = `
  * Homepage: http://laobubu.net/HyperMD/
  * Issues: https://github.com/laobubu/HyperMD/issues
  */
-`.trim()
+`.trim();
 
 /**
  * Get modules' object name in plain browser env
@@ -108,18 +106,23 @@ exports.banner = `
  * @returns {string}
  */
 exports.getGlobalName = function getGlobalName(moduleID, currentFile) {
-  if (!moduleID) return moduleID
-  if (currentFile && moduleID.charAt(0) !== ".") return exports.globalNames[moduleID] || null
+  if (!moduleID) return moduleID;
+  if (currentFile && moduleID.charAt(0) !== ".")
+    return exports.globalNames[moduleID] || null;
 
   // get clean module name
-  var cleanModuleID = moduleID
-  if (currentFile) cleanModuleID = path.normalize(path.join(path.dirname(currentFile), moduleID)).replace(/\\/g, '/').replace(/^\.\//, '')
+  var cleanModuleID = moduleID;
+  if (currentFile)
+    cleanModuleID = path
+      .normalize(path.join(path.dirname(currentFile), moduleID))
+      .replace(/\\/g, "/")
+      .replace(/^\.\//, "");
 
-  var ans = exports.components[cleanModuleID]
+  var ans = exports.components[cleanModuleID];
 
-  if (ans) return "HyperMD." + ans
-  if (/^core(\/.+)?$/.test(cleanModuleID)) return "HyperMD"
-  if ("everything" === cleanModuleID) return "HyperMD"
+  if (ans) return "HyperMD." + ans;
+  if (/^core(\/.+)?$/.test(cleanModuleID)) return "HyperMD";
+  if ("everything" === cleanModuleID) return "HyperMD";
 
-  return null
-}
+  return null;
+};

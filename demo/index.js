@@ -72,7 +72,7 @@ require([
   "hypermd/addon/table-align",
 
   "hypermd/keymap/hypermd",
-  "hypermd/keymap/vim",
+  "hypermd/demo/vim",
 
   /////////////////////////////////////////////
   /// PowerPack with third-party libraries  ///
@@ -146,10 +146,6 @@ require([
   // Preview Tex Math formula
   // @see demo/math-preview.js
   init_math_preview(editor);
-
-  // Watch editor and generate TOC
-  // @see demo/toc.js
-  init_toc(editor);
 
   // @see demo/lab.js
   init_lab(editor);
