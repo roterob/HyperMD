@@ -6,7 +6,7 @@ var demo_page_baseurl = window.location.href
 var demo_page_lib_baseurl = is_running_demo
   ? "https://cdn.jsdelivr.net/npm/"
   : demo_page_baseurl + "node_modules/";
-var demo_filename = "README.md";
+var demo_filename = "TEST.md";
 
 if (requirejs)
   requirejs.config({
@@ -72,7 +72,7 @@ require([
   "hypermd/addon/table-align",
 
   "hypermd/keymap/hypermd",
-  "hypermd/demo/vim",
+  "hypermd/demo/codemirror/vim",
 
   /////////////////////////////////////////////
   /// PowerPack with third-party libraries  ///
