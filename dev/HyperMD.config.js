@@ -23,8 +23,7 @@ exports.components = {
   "addon/mode-loader": "ModeLoader",
   "addon/hide-token": "HideToken",
   "addon/cursor-debounce": "CursorDebounce",
-  "keymap/hypermd": "KeyMap",
-  "keymap/vim": "KeyMapVim",
+  "keymap/hypermd": "KeyMap"
 };
 
 /**

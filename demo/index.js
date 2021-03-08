@@ -32,6 +32,7 @@ require([
   ///////////////////////////////////////
 
   "codemirror/lib/codemirror",
+  "hypermd/demo/codemirror/markdown",
   "hypermd/core",
 
   ///////////////////////////////////////
@@ -90,7 +91,7 @@ require([
 
   "hypermd/powerpack/paste-with-turndown",
   "turndown-plugin-gfm",
-], function (CodeMirror, HyperMD) {
+], function (CodeMirror, _, HyperMD) {
   "use strict";
   var myTextarea = document.getElementById("demo");
 
